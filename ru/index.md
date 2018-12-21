@@ -2,9 +2,9 @@
 
 Для теста CrowdIn.
 
-Adding a [cross-link](../dome_file), and a [web link](https://google.com).
+Добавление ссылок [cross-link](../dome_file) и [web link](https://google.com).
 
-One more segment.
+Ещё один сегмент.
 
 !!!
 
@@ -39,9 +39,9 @@ These examples only show the order that data is arranged in. The values from dif
 
 Examples of a column-oriented DBMS: Vertica, Paraccel (Actian Matrix and Amazon Redshift), Sybase IQ, Exasol, Infobright, InfiniDB, MonetDB (VectorWise and Actian Vector), LucidDB, SAP HANA, Google Dremel, Google PowerDrill, Druid, and kdb+. {: .grey }
 
-Different orders for storing data are better suited to different scenarios. The data access scenario refers to what queries are made, how often, and in what proportion; how much data is read for each type of query – rows, columns, and bytes; the relationship between reading and updating data; the working size of the data and how locally it is used; whether transactions are used, and how isolated they are; requirements for data replication and logical integrity; requirements for latency and throughput for each type of query, and so on.
+Различные заказы для хранения данных лучше подходят для различных сценариев. The data access scenario refers to what queries are made, how often, and in what proportion; how much data is read for each type of query – rows, columns, and bytes; the relationship between reading and updating data; the working size of the data and how locally it is used; whether transactions are used, and how isolated they are; requirements for data replication and logical integrity; requirements for latency and throughput for each type of query, and so on.
 
-The higher the load on the system, the more important it is to customize the system set up to match the requirements of the usage scenario, and the more fine grained this customization becomes. There is no system that is equally well-suited to significantly different scenarios. If a system is adaptable to a wide set of scenarios, under a high load, the system will handle all the scenarios equally poorly, or will work well for just one or few of possible scenarios.
+Чем больше нагрузка на системы, тем более важно, что это для настройки системы, созданной в соответствии с требованиями сценария использования и тем более хорошо зернистой, эта настройка становится. There is no system that is equally well-suited to significantly different scenarios. If a system is adaptable to a wide set of scenarios, under a high load, the system will handle all the scenarios equally poorly, or will work well for just one or few of possible scenarios.
 
 ## Key Properties of the OLAP scenario
 
@@ -73,7 +73,7 @@ Column-oriented databases are better suited to OLAP scenarios: they are at least
 
 ![Column-oriented](images/column_oriented.gif#)
 
-See the difference?
+Увидеть разницу?
 
 ### Input/output
 
@@ -90,42 +90,42 @@ For example, the query "count the number of records for each advertising platfor
 $ clickhouse-client
 ClickHouse client version 0.0.52053.
 Connecting to localhost:9000.
-Connected to ClickHouse server version 0.0.52053.
+Подключен к ClickHouse сервера версии 0.0.52053.
 
-:) SELECT CounterID, count() FROM hits GROUP BY CounterID ORDER BY count() DESC LIMIT 20
+:) Выберите CounterID, count() от хиты GROUP BY CounterID ORDER BY count() DESC предел 20
 
-SELECT
+выберите
 CounterID,
 count()
-FROM hits
-GROUP BY CounterID
+ОТ
+хиты GROUP BY CounterID
 ORDER BY count() DESC
-LIMIT 20
+предел 20
 
-┌─CounterID─┬──count()─┐
-│    114208 │ 56057344 │
-│    115080 │ 51619590 │
-│      3228 │ 44658301 │
-│     38230 │ 42045932 │
-│    145263 │ 42042158 │
-│     91244 │ 38297270 │
-│    154139 │ 26647572 │
-│    150748 │ 24112755 │
-│    242232 │ 21302571 │
-│    338158 │ 13507087 │
-│     62180 │ 12229491 │
-│     82264 │ 12187441 │
-│    232261 │ 12148031 │
-│    146272 │ 11438516 │
-│    168777 │ 11403636 │
-│   4120072 │ 11227824 │
-│  10938808 │ 10519739 │
-│     74088 │  9047015 │
-│    115079 │  8837972 │
-│    337234 │  8205961 │
+┌─CounterID─┬──count () — ─┐
+│ 114208 │ 56057344 │
+│ 115080 │ 51619590 │
+│ 3228 │ 44658301 │
+│ 38230 │ 42045932 │
+│ 145263 │ 42042158 │
+│ 91244 │ 38297270 │
+│ 154139 │ 26647572 │
+│ 150748 │ 24112755 │
+│ 242232 │ 21302571 │
+│ 338158 │ 13507087 │
+│ 62180 │ 12229491 │
+│ 82264 │ 12187441 │
+│ 232261 │ 12148031 │
+│ 146272 │ 11438516 │
+│ 168777 │ 11403636 │
+│ 4120072 │ 11227824 │
+│ 10938808 │ 10519739 │
+│ 74088 │ 9047015 │
+│ 115079 │ 8837972 │
+│ 337234 │ 8205961 │
 └───────────┴──────────┘
 
-20 rows in set. Elapsed: 0.153 sec. Processed 1.00 billion rows, 4.00 GB (6.53 billion rows/s., 26.10 GB/s.)
+20 строк в наборе. Elapsed: 0.153 sec. Processed 1.00 billion rows, 4.00 GB (6.53 billion rows/s., 26.10 GB/s.)
 
 :)</pre>
 </p>
