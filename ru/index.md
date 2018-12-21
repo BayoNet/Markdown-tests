@@ -1,6 +1,8 @@
 # Что такое ClickHouse?
 
-Ещё один сегмент.
+For the CrowdIn test.
+
+One more segment.
 
 !!!
 
@@ -86,40 +88,42 @@ For example, the query "count the number of records for each advertising platfor
 $ clickhouse-client
 ClickHouse client version 0.0.52053.
 Connecting to localhost:9000.
-Подключен к ClickHouse сервера версии 0.0.52053.
+Connected to ClickHouse server version 0.0.52053.
 
-:) Выберите CounterID, count() от хиты GROUP BY CounterID ORDER BY count() DESC предел 20
+:) SELECT CounterID, count() FROM hits GROUP BY CounterID ORDER BY count() DESC LIMIT 20
 
-выберите
+SELECT
 CounterID,
 count()
-ОТ
-хиты GROUP BY CounterID
+FROM hits
+GROUP BY CounterID
 ORDER BY count() DESC
-предел 20
+LIMIT 20
 
-┌─CounterID─┬──count () — ─┐
-│ 114208 │ 56057344 │
-│ 115080 │ 51619590 │
-│ 3228 │ 44658301 │
-│ 38230 │ 42045932 │
-│ 145263 │ 42042158 │
-│ 91244 │ 38297270 │
-│ 154139 │ 26647572 │
-│ 150748 │ 24112755 │
-│ 242232 │ 21302571 │ &lt; Div класс = «notranslate» > 17&lt;/div> │ 338158 │ 13507087 │
-│ 62180 │ 12229491 │
-│ 82264 │ 12187441 │
-│ 232261 │ 12148031 │
-│ 146272 │ 11438516 │
-│ 168777 │ 11403636 │
-│ 4120072 │ 11227824 │
-│ 10938808 │ 10519739 │
-│ 74088 │ 9047015 │ &lt; Div класс = «notranslate» > 26&lt;/div> │ 115079 │ 8837972 │
-│ 337234 │ 8205961 │
+┌─CounterID─┬──count()─┐
+│    114208 │ 56057344 │
+│    115080 │ 51619590 │
+│      3228 │ 44658301 │
+│     38230 │ 42045932 │
+│    145263 │ 42042158 │
+│     91244 │ 38297270 │
+│    154139 │ 26647572 │
+│    150748 │ 24112755 │
+│    242232 │ 21302571 │
+│    338158 │ 13507087 │
+│     62180 │ 12229491 │
+│     82264 │ 12187441 │
+│    232261 │ 12148031 │
+│    146272 │ 11438516 │
+│    168777 │ 11403636 │
+│   4120072 │ 11227824 │
+│  10938808 │ 10519739 │
+│     74088 │  9047015 │
+│    115079 │  8837972 │
+│    337234 │  8205961 │
 └───────────┴──────────┘
 
-20 строк в наборе. Elapsed: 0.153 sec. Processed 1.00 billion rows, 4.00 GB (6.53 billion rows/s., 26.10 GB/s.)
+20 rows in set. Elapsed: 0.153 sec. Processed 1.00 billion rows, 4.00 GB (6.53 billion rows/s., 26.10 GB/s.)
 
 :)</pre>
 </p>
