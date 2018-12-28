@@ -2,7 +2,7 @@
 
 Для теста CrowdIn.
 
-Добавление ссылок [cross-link](../dome_file) и [web link](https://google.com).
+Добавление ссылок [cross-link](../dome_file) иweb link<<1>.</p> 
 
 Ещё один сегмент.
 
